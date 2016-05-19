@@ -22,6 +22,8 @@
           $content = preg_replace("/<([a-z][a-z0-9]*)[^>]*?(\/?)>/i",'<$1$2>', $matches[1]);
           //remove tags vazias
           $content = preg_replace("/<[^\/>][^>]*><\/[^>]+>/",'', $content);
+          //remove tags de formatação
+          $content = preg_replace("/<\/?(b|font|em|strong)>/",'', $content);
           //imprime na tela
           echo $content;
         ?>
